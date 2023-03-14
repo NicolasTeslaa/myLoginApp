@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyLoginApp.LoginPage"
+             Title="LoginPage"
+             Shell.NavBarIsVisible="False">
+    <Grid BackgroundColor="White" RowDefinitions="220,*,50">
+        <Path Stroke="Transparent" Margin="-180,-30,0,0" VerticalOptions="Center" Data="m113.44997,-3.23998l558.00005,3.45383l0,145.20846c-223.50002,97.53017 -307.50002,89.25632 -555.00005,20.31599l-3,-168.97828z" Fill="#1D8348"/>
+        <StackLayout WidthRequest="60">
+                <Border Margin="0,100,0,0"
+                        StrokeThickness="0"
+                        StrokeShape="RoundRectangle 30"
+                        HorizontalOptions="Center">
+                    <Image Margin="0" Aspect="AspectFill" Source="https://www.findool.com/images/avatars/avatar.png" HeightRequest="60" WidthRequest="60" />
+                </Border>
+        </StackLayout>
+        <Grid RowDefinitions="*,50,50,Auto,40,40,*" Grid.Row="1" RowSpacing="5" Margin="20,20,20,20">
+            <Label
+                Text="Bem Vindo" Grid.Row="1"
+                FontSize="Title" FontAttributes="Bold"
+                HorizontalOptions="Center"
+                />
+            <Label 
+                Text="Faça login para continuar"
+                FontSize="Subtitle"
+                Grid.Row="2"
+                HorizontalOptions="Center"
+                />
+            <StackLayout Grid.Row="3">
+                <Frame BorderColor="#1D8348" HorizontalOptions="FillAndExpand" WidthRequest="350" CornerRadius="30" Padding="0">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame BackgroundColor="SkyBlue" CornerRadius="30" WidthRequest="40" HeightRequest="40" Padding="0" Margin="5">
+                            <Image Source="https://cdn4.iconfinder.com/data/icons/glyphs/24/icons_user2-256.png" Aspect="AspectFill" Margin="0" WidthRequest="40"/>
+                        </Frame>
+                        <Entry Text="{Binding UserName}" Placeholder="Nome de Usuario" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+                <Frame Margin="0,15" BorderColor="LightGreen" HorizontalOptions="FillAndExpand" WidthRequest="350" CornerRadius="30" Padding="0">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame BackgroundColor="SkyBlue" CornerRadius="30" WidthRequest="40" HeightRequest="40" Padding="0" Margin="5">
+                            <Image Source="https://cdn0.iconfinder.com/data/icons/basic-ui-elements-round/700/09_lock-256.png" Aspect="AspectFill" Margin="0" WidthRequest="40"/>
+                        </Frame>
+                        <Entry IsTextPredictionEnabled="false" Text="{Binding Password}" Placeholder="Senha" TextColor="Black" IsPassword="true" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+                <HorizontalStackLayout Grid.Row="4"  Padding="0" Spacing="30">
+                    <Grid ColumnDefinitions="25,*">
+                        <CheckBox IsChecked="false"/>
+                        <Label Grid.Column="1"
+                        Text="Lembrar meu acesso"
+                        TextColor="DarkGrey"
+                        FontSize="Small"
+                        VerticalTextAlignment="Center"
+                        HorizontalOptions="Center"/>
+                    </Grid>
+                    <Label
+                        Text="Esqueci minha senha"
+                        TextColor="#1D8348"
+                        FontAttributes="Bold"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalTextAlignment="Center"/>
+                </HorizontalStackLayout>
+                <Button Text="Entrar" BackgroundColor="#1d8348" Margin="0,20" WidthRequest="200" CornerRadius="40"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Margin="0,20">
+                    <Label Text="Ainda não tem conta?"/>
+                    <Label Text="Criar" TextTransform="Uppercase" TextColor="#1D8348" FontAttributes="Bold"/>
+                </StackLayout>
+            </StackLayout>
+            
+        </Grid>
+            
+    </Grid>
+</ContentPage>
